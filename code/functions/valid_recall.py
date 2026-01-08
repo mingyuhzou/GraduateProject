@@ -93,12 +93,14 @@ def get_impression_gt(data):
     return gt
 
 
-def valid_recall_impression(pred, topk=5):
-    gt = get_impression_gt(read_dev_behaviors())
+def valid_recall(pred, topk=5):
+    gt = get_users_earliest_hist(
+        pl.read_parquet(read_dev_behaviors())
+    )
 
     data = pred.join(
         gt,
-        on=["impr_id", "user_id"],
+        on="user_id",
         how="inner"
     )
 
@@ -107,27 +109,30 @@ def valid_recall_impression(pred, topk=5):
 
         recall_k = (
             data
-            # 1. 取前 k 个召回结果
+            # 1. 截断召回列表
             .with_columns(
-                pl.col("rec_list").list.slice(0, k).alias("rec_k")
+                pl.col("rec_list").list.slice(0, k).alias("rec_k"),
+                pl.col("hist").list.len().alias("gt_len")
             )
-            # 2. 计算命中个数 |rec@k ∩ gt|
+            # 2. 展开 rec_k
+            .explode("rec_k")
+            # 3. 是否命中用户 earliest hist
             .with_columns(
-                pl.col("rec_k")
-                .list.eval(pl.element().is_in(pl.col("gt")))
-                .list.sum()
-                .alias("hit")
+                pl.col("rec_k").is_in(pl.col("hist")).cast(pl.Int8).alias("hit")
             )
-            # 3. impression 级 recall
+            # 4. user 级聚合
+            .group_by(["user_id", "gt_len"])
+            .agg(pl.sum("hit").alias("hit_cnt"))
+            # 5. user recall
             .with_columns(
-                (pl.col("hit") / pl.col("gt").list.len()).alias("recall")
+                (pl.col("hit_cnt") / pl.col("gt_len")).alias("recall")
             )
-            # 4. 所有 impression 取平均
+            # 6. 所有 user 平均
             .select(pl.col("recall").mean())
             .item()
         )
 
-        print(f"Recall@{k}: {recall_k:.4f}")
+        print(f"User-Recall@{k}: {recall_k}")
 
 
 
