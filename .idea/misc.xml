@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="D:\conda\envs\txt2img" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="$PROJECT_DIR$/../miniconda3/envs/rapids-25.12" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="$USER_HOME$/miniconda3/envs/demo" project-jdk-type="Python SDK" />
 </project>

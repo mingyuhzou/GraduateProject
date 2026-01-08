@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f80ae9e-a86e-4541-be49-4078cf9af967" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/code/recall/recall_word2vec.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/recall/training_word2vec.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GraduateProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GraduateProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/functions/read_behaviors.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/functions/read_behaviors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/functions/valid_recall.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/functions/valid_recall.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/recall/content_embedding_on_bert.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/content_embedding_on_bert.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/recall/recall_content.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/recall_content.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/recall/recall_usercf.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/recall_usercf.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/recall/recall_word2vec.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/recall_word2vec.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/recall/training_word2vec.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/training_word2vec.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +118,8 @@
       <workItem from="1767835481052" duration="9569000" />
       <workItem from="1767852688272" duration="4209000" />
       <workItem from="1767857261475" duration="269000" />
+      <workItem from="1767857816075" duration="1121000" />
+      <workItem from="1767859246672" duration="2212000" />
     </task>
     <servers />
   </component>
