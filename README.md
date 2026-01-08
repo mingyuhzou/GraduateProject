@@ -20,55 +20,15 @@ Mind 新闻推荐（Microsoft MIND / MIND-Corpus）比赛的主流解决方案�
 
 4）lightGCN，基于图神经网络训练得到用户和物品向量，召回用户向量*物品向量最大的物品
 
-5）基于内容的召回，对新闻内容采用TF-IDF，做向量召回
-
 合并结果去重后用于排序
 
 
 
-二、特征工程（核心竞争力）
-这是 MIND 成绩差异最大的部分。
+二、排序模型（Ranker）
 
-1）用户行为特征
+NRMS
 
-- 历史点击数（log 变换）
-- 最近 1d / 3d / 7d 点击数
-- 最近一次点击距当前 impression 的时间差
 
-2）新闻侧特征
-
-- 新闻在最近 1d / 3d / 7d 的点击数
-- 最近曝光次数（如有）
-- 全局点击次数（log）
-- 距新闻“最近一次被点击”的时间差
-- 最近 1d 是否被点击过（0/1）
-
-3）交叉特征
-
-- 用户向量 vs 新闻向量的相似度（cosine / dot）
-- 用户最近点击新闻与候选新闻的最大 / 平均相似度
-- 类别匹配度（user history category 分布 vs candidate）
-
-4）召回来源特征
-
-- 是否来自 itemcf（0/1）
-- 是否来自 w2v
-- 是否来自 bert
-- 是否来自 popularity
-- 召回得分（itemcf_score / bert_sim / w2v_GCN分数）
-
-三、排序模型（Ranker）
-
-1）Tree-based Ranker（辅助或融合）
-
-- LightGBM / XGBoost
-- 输入为精心构造的统计 + embedding 相似度特征
-- 常用于模型融合或二次精排
-
-四、训练技巧
-
-- 负采样：impression 内负样本 + 随机负采样
-- 长序列截断（保留最近行为）
 
 
 
