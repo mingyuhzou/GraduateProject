@@ -1,5 +1,7 @@
 import polars as pl
-from .read_behaviors import read_train_behaviors,read_dev_behaviors
+from .read_behaviors import read_train_behaviors, read_dev_behaviors, read_small_dev_behaviors
+from .read_news import read_small_news
+
 
 def get_users_earliest_hist(data):
     """
@@ -95,7 +97,7 @@ def get_impression_gt(data):
 
 def valid_recall(pred, topk=5):
     gt = get_users_earliest_hist(
-        pl.read_parquet(read_dev_behaviors())
+        read_dev_behaviors()
     )
 
     data = pred.join(
@@ -134,5 +136,44 @@ def valid_recall(pred, topk=5):
 
         print(f"User-Recall@{k}: {recall_k}")
 
+def valid_recall_small(pred, topk=5):
+    gt = get_users_earliest_hist(
+        read_small_dev_behaviors()
+    )
 
+    data = pred.join(
+        gt,
+        on="user_id",
+        how="inner"
+    )
+
+    for i in range(1, topk + 1):
+        k = i * 10
+
+        recall_k = (
+            data
+            # 1. 截断召回列表
+            .with_columns(
+                pl.col("rec_list").list.slice(0, k).alias("rec_k"),
+                pl.col("hist").list.len().alias("gt_len")
+            )
+            # 2. 展开 rec_k
+            .explode("rec_k")
+            # 3. 是否命中用户 earliest hist
+            .with_columns(
+                pl.col("rec_k").is_in(pl.col("hist")).cast(pl.Int8).alias("hit")
+            )
+            # 4. user 级聚合
+            .group_by(["user_id", "gt_len"])
+            .agg(pl.sum("hit").alias("hit_cnt"))
+            # 5. user recall
+            .with_columns(
+                (pl.col("hit_cnt") / pl.col("gt_len")).alias("recall")
+            )
+            # 6. 所有 user 平均
+            .select(pl.col("recall").mean())
+            .item()
+        )
+
+        print(f"User-Recall@{k}: {recall_k}")
 

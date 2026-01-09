@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f80ae9e-a86e-4541-be49-4078cf9af967" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/code/recall/gcn_model.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GraduateProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GraduateProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/functions/read_behaviors.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/functions/read_behaviors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/functions/read_news.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/functions/read_news.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/functions/valid_recall.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/functions/valid_recall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/process/generate_total_news.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/process/generate_total_news.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/process/transformBehaviorFile.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/process/transformBehaviorFile.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/process/transformNewsFile.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/process/transformNewsFile.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/recall/content_embedding_on_bert.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/content_embedding_on_bert.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/recall/recall_content.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/recall_content.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/recall/recall_word2vec.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/recall_word2vec.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/recall/training_word2vec.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/training_word2vec.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/recall/recall_usercf.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/recall/recall_usercf.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/recall/recall_word2vec.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/recall/training_word2vec.ipynb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +67,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ming/GraduateProject/code/recall&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ming/GraduateProject/Data&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,9 +80,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data" />
       <recent name="$PROJECT_DIR$/code/recall/recall_results" />
       <recent name="$PROJECT_DIR$/code/recall" />
-      <recent name="$PROJECT_DIR$/Data" />
       <recent name="D:\GraduateProject\Data" />
       <recent name="D:\GraduateProject\code\process" />
     </key>
@@ -120,10 +128,32 @@
       <workItem from="1767857261475" duration="269000" />
       <workItem from="1767857816075" duration="1121000" />
       <workItem from="1767859246672" duration="2212000" />
+      <workItem from="1767947364801" duration="2199000" />
+      <workItem from="1767920811322" duration="3314000" />
+      <workItem from="1767924327563" duration="257000" />
+      <workItem from="1767924605746" duration="8494000" />
+      <workItem from="1767938631877" duration="79000" />
+      <workItem from="1767938916477" duration="81000" />
+      <workItem from="1767939059752" duration="1478000" />
+      <workItem from="1767940565847" duration="7652000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="python:librdkafka" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>file://$PROJECT_DIR$/code/recall/gcn_model.ipynb</url>
+          <line>192</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
